@@ -101,13 +101,40 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div><div class="brand"><div class="logo"></div><strong>ThinkInk</strong></div><p class="small">Your creative prompt companion.</p></div>
-      <div><div class="small">Explore</div><ul class="small"><li><a href="pages/features.html">Features</a></li><li><a href="pages/pricing.html">Pricing</a></li></ul></div>
-      <div><div class="small">Legal</div><ul class="small"><li><a href="pages/privacy.html">Privacy</a></li><li><a href="pages/terms.html">Terms</a></li></ul></div>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="logo" aria-hidden="true"></div>
+            <strong>ThinkInk</strong>
+          </div>
+          <p class="footer-tagline">Your creative prompt companion.</p>
+        </div>
+        
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-nav-group">
+            <h3 class="footer-heading">Explore</h3>
+            <ul class="footer-links">
+              <li><a href="pages/features.html">Features</a></li>
+              <li><a href="pages/pricing.html">Pricing</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-nav-group">
+            <h3 class="footer-heading">Legal</h3>
+            <ul class="footer-links">
+              <li><a href="pages/privacy.html">Privacy Policy</a></li>
+              <li><a href="pages/terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      
+      <div class="footer-copyright">
+        © <span id="year"></span> ThinkInk. All rights reserved.
+      </div>
     </div>
-    <div class="container" style="margin-top:10px"><div class="small">© <span id="y"></span> ThinkInk</div></div>
   </footer>
 
   <script src="assets/app.js"></script>
