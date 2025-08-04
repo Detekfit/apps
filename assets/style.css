@@ -781,3 +781,15 @@ body.modal-open {
 .pro-features-list .icon-check svg {
   vertical-align: middle;
 }
+
+/* Inline notice box */
+.notice {
+  background: #151515;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--s-4);
+  color: var(--muted);
+}
+.notice strong {
+  color: var(--text);
+}
