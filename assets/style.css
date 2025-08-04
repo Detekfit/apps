@@ -116,6 +116,15 @@ img {
   background: var(--accent);
 }
 
+.brand-link {
+  color: inherit;
+  text-decoration: none;
+}
+.brand-link:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
 /* Desktop nav */
 .nav-links {
   display: none;
@@ -217,7 +226,7 @@ img {
   color: var(--text);
   background: #222;
   cursor: pointer;
-  border-radius: 8px; /* unified radius */
+  border-radius: 4px; /* unified radius */
   transition: background-color 0.15s ease, border-color 0.15s ease,
     color 0.15s ease, transform 0.05s ease;
 }
@@ -229,7 +238,8 @@ img {
 }
 .btn.primary {
   background: var(--accent);
-  color: #0b0d2a;
+  color: #000000;
+  font-weight: 400;
   border-color: transparent;
 }
 .btn.primary:hover {
@@ -677,4 +687,97 @@ h1 .accent {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Image Preview (Lightbox) */
+.preview {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+.preview.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.preview__backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.preview__dialog {
+  position: relative;
+  max-width: min(92vw, 1100px);
+  max-height: 88vh;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+.preview__img {
+  display: block;
+  max-width: 100%;
+  max-height: 78vh;
+  object-fit: contain;
+  background: #0f0f0f;
+}
+.preview__caption {
+  padding: 10px 14px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.preview__close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #1a1a1a;
+  color: var(--text);
+  cursor: pointer;
+}
+.preview__close:hover {
+  border-color: #343434;
+}
+
+/* Prevent page scroll when modal open */
+body.modal-open {
+  overflow: hidden;
+}
+
+.pro-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pro-features-list li {
+  display: flex;
+  align-items: center;
+}
+.pro-features-list li:last-child {
+  margin-bottom: 0;
+}
+.pro-features-list .icon-check {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+.pro-features-list .icon-check svg {
+  vertical-align: middle;
 }

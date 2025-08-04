@@ -10,19 +10,26 @@
     />
     <link rel="icon" href="../favicon.ico" />
     <link rel="stylesheet" href="../assets/style.css" />
+    <script src="../assets/app.js"></script>
   </head>
   <body>
     <a class="sr-only" href="#main">Skip to content</a>
 
     <header class="header-wrap">
       <div class="container nav">
-        <div class="brand">
-          <div class="logo"></div>
-          ThinkInk
-        </div>
+        <a
+          class="brand brand-link"
+          href="../index.html"
+          aria-label="ThinkInk — Home"
+        >
+          <div class="logo" aria-hidden="true"></div>
+          <span>ThinkInk</span>
+        </a>
         <nav class="nav-links" aria-label="Primary">
           <a data-route="index.html" href="../index.html">Home</a>
-          <a data-route="features.html" href="features.html">Features</a>
+          <a data-route="features.html" href="features.html" aria-current="page"
+            >Features</a
+          >
           <a data-route="pricing.html" href="pricing.html">Pricing</a>
           <a data-route="privacy.html" href="privacy.html">Privacy</a>
           <a data-route="terms.html" href="terms.html">Terms</a>
@@ -38,10 +45,12 @@
           ☰
         </button>
       </div>
-      <div id="drawer" class="drawer">
+      <div id="drawer" class="drawer" aria-hidden="true">
         <div class="container stack">
           <a data-route="index.html" href="../index.html">Home</a>
-          <a data-route="features.html" href="features.html">Features</a>
+          <a data-route="features.html" href="features.html" aria-current="page"
+            >Features</a
+          >
           <a data-route="pricing.html" href="pricing.html">Pricing</a>
           <a data-route="privacy.html" href="privacy.html">Privacy</a>
           <a data-route="terms.html" href="terms.html">Terms</a>
@@ -50,7 +59,7 @@
       </div>
     </header>
 
-    <main id="main">
+    <main id="main" tabindex="-1">
       <section class="section features">
         <div class="container">
           <span class="ribbon">Pro-level toolkit • Premium UX</span>
@@ -64,12 +73,16 @@
 
           <div class="feature-grid" style="margin-top: 18px">
             <article class="feature-card wide">
-              <a class="feature-media placeholder" href="#">
-                <!-- Replace with your image later -->
+              <a
+                class="feature-media"
+                href="#"
+                data-preview="../assets/images/image-1.svg"
+              >
                 <img
-                  src="../assets//images/image-1.svg"
+                  src="../assets/images/image-1.svg"
                   alt="Prompt Enhancer preview"
                   loading="lazy"
+                  decoding="async"
                 />
                 <span class="tag">Enhancer</span>
               </a>
@@ -95,11 +108,16 @@
             </article>
 
             <article class="feature-card">
-              <a class="feature-media" href="#">
+              <a
+                class="feature-media"
+                href="#"
+                data-preview="../assets/images/image-2.svg"
+              >
                 <img
-                  src="../assets//images/image-2.svg"
+                  src="../assets/images/image-2.svg"
                   alt="Templates library preview"
                   loading="lazy"
+                  decoding="async"
                 />
                 <span class="tag">Templates</span>
               </a>
@@ -120,11 +138,16 @@
             </article>
 
             <article class="feature-card">
-              <a class="feature-media" href="#">
+              <a
+                class="feature-media"
+                href="#"
+                data-preview="../assets/images/image-4.svg"
+              >
                 <img
-                  src="../assets//images/image-4.svg"
+                  src="../assets/images/image-4.svg"
                   alt="History and favorites preview"
                   loading="lazy"
+                  decoding="async"
                 />
                 <span class="tag">History</span>
               </a>
@@ -145,11 +168,16 @@
             </article>
 
             <article class="feature-card">
-              <a class="feature-media" href="#">
+              <a
+                class="feature-media"
+                href="#"
+                data-preview="../assets/images/image-3.svg"
+              >
                 <img
-                  src="../assets//images/image-3.svg"
+                  src="../assets/images/image-3.svg"
                   alt="Image and video prompts preview"
                   loading="lazy"
+                  decoding="async"
                 />
                 <span class="tag">Creative</span>
               </a>
@@ -191,11 +219,13 @@
             <p class="footer-tagline">Your creative prompt companion.</p>
           </div>
 
-          <nav class="footer-nav" aria-label="Footer navigation">
+          <nav class="footer-nav" aria-label="Footer">
             <div class="footer-nav-group">
               <h3 class="footer-heading">Explore</h3>
               <ul class="footer-links">
-                <li><a href="features.html">Features</a></li>
+                <li>
+                  <a href="features.html" aria-current="page">Features</a>
+                </li>
                 <li><a href="pricing.html">Pricing</a></li>
               </ul>
             </div>
@@ -216,6 +246,27 @@
       </div>
     </footer>
 
-    <script src="../assets/app.js"></script>
+    <!-- Image Preview Modal -->
+    <div
+      id="imgPreview"
+      class="preview hidden"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Image preview"
+    >
+      <div class="preview__backdrop" data-close></div>
+      <div class="preview__dialog" role="document">
+        <button
+          class="preview__close"
+          type="button"
+          aria-label="Close"
+          data-close
+        >
+          &times;
+        </button>
+        <img class="preview__img" src="" alt="" />
+        <div class="preview__caption"></div>
+      </div>
+    </div>
   </body>
 </html>
