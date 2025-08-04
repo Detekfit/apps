@@ -1,142 +1,200 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ThinkInk — AI Studio App</title>
-  <meta name="description" content="Enhance prompts, reuse templates, and speed up your AI workflows with a minimalist dark UI." />
-  <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="assets/style.css" />
-</head>
-<body>
-  <a class="sr-only" href="#main">Skip to content</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ThinkInk — AI Studio App</title>
+    <meta
+      name="description"
+      content="Enhance prompts, reuse templates, and speed up your AI workflows with a minimalist dark UI."
+    />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <a class="sr-only" href="#main">Skip to content</a>
 
-  <header class="header-wrap" role="banner">
-    <div class="container nav">
-      <div class="brand"><div class="logo" aria-hidden="true"></div>ThinkInk</div>
-      <nav class="nav-links" aria-label="Primary">
-        <a data-route="index.html" href="index.html">Home</a>
-        <a data-route="features.html" href="pages/features.html">Features</a>
-        <a data-route="pricing.html" href="pages/pricing.html">Pricing</a>
-        <a data-route="privacy.html" href="pages/privacy.html">Privacy</a>
-        <a data-route="terms.html" href="pages/terms.html">Terms</a>
-      </nav>
-      <div class="nav-cta">
-      </div>
-      <button id="burger" class="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">☰</button>
-    </div>
-    <div id="drawer" class="drawer" role="navigation" aria-label="Mobile">
-      <div class="container stack">
-        <a data-route="index.html" href="index.html">Home</a>
-        <a data-route="features.html" href="pages/features.html">Features</a>
-        <a data-route="pricing.html" href="pages/pricing.html">Pricing</a>
-        <a data-route="privacy.html" href="pages/privacy.html">Privacy</a>
-        <a data-route="terms.html" href="pages/terms.html">Terms</a>
-        <div class="stack" style="margin-top:6px">
-          <!-- <a class="btn primary" href="#download">Start free</a> -->
+    <header class="header-wrap" role="banner">
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          ThinkInk
         </div>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero">
-      <div class="container">
-        <span class="eyebrow">New • Prompt Enhancer</span>
-        <h1>
-          Build better prompts<br/>
-          <span class="accent">Scale your AI workflows</span>
-        </h1>
-        <p class="lead">ThinkInk is your creative prompt studio. Enhance clarity, tone, and structure; explore templates for writing, marketing, and study; keep your history and reuse the best — faster.</p>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#" id="download">Download for Android</a>
-          <a class="btn" href="pages/features.html">Explore features</a>
-        </div>
-        <div class="hero-note">Free to start • Pro unlocks image/video prompt packs and unlimited history</div>
-
-        <div class="split" style="margin-top:32px">
-          <div class="container box">
-            <h3 style="margin:0 0 10px">Why ThinkInk</h3>
-            <div class="grid">
-              <article class="card"><h3>Prompt Enhancer</h3><p>Refine tone, clarity, and structure to get on‑brief outputs.</p></article>
-              <article class="card"><h3>Templates</h3><p>High‑quality prompts for writing, productivity, and marketing.</p></article>
-              <article class="card"><h3>History</h3><p>Save, favorite, and quickly reuse your best prompts.</p></article>
-            </div>
-            <div class="badges">
-              <span class="badge">Minimal dark UI</span>
-              <span class="badge">Android optimized</span>
-              <span class="badge">Built with Flutter</span>
-            </div>
-          </div>
-
-          <div class="demo" aria-label="App preview">
-            <div class="badge">App preview</div>
-            <div class="card" style="margin-top:10px">
-              <strong>Enhancer Presets</strong>
-              <p class="meta">Formal • Friendly • Concise • Persuasive</p>
-            </div>
-            <div class="card" style="margin-top:10px">
-              <strong>Template Packs</strong>
-              <p class="meta">Blog outlines • Social captions • Ad copy • Study helpers</p>
-            </div>
-            <div class="card" style="margin-top:10px">
-              <strong>History</strong>
-              <p class="meta">Saved prompts with search and favorites</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h3 style="margin:0 0 14px">Get started</h3>
-        <div class="grid">
-          <article class="card"><h3>Free</h3><p>Core Enhancer • Basic Templates • Limited History</p><div style="margin-top:10px"><a class="btn block" href="pages/pricing.html">Choose Free</a></div></article>
-          <article class="card"><h3>Pro</h3><p>Unlimited History • Pro Templates • Image/Video Packs</p><div style="margin-top:10px"><a class="btn primary block" href="pages/pricing.html">Upgrade to Pro</a></div></article>
-          <article class="card"><h3>Teams</h3><p>Shared libraries • Collaboration • Admin controls</p><div style="margin-top:10px"><a class="btn block" href="pages/pricing.html">Contact Sales</a></div></article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand">
-            <div class="logo" aria-hidden="true"></div>
-            <strong>ThinkInk</strong>
-          </div>
-          <p class="footer-tagline">Your creative prompt companion.</p>
-        </div>
-        
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <div class="footer-nav-group">
-            <h3 class="footer-heading">Explore</h3>
-            <ul class="footer-links">
-              <li><a href="pages/features.html">Features</a></li>
-              <li><a href="pages/pricing.html">Pricing</a></li>
-            </ul>
-          </div>
-          
-          <div class="footer-nav-group">
-            <h3 class="footer-heading">Legal</h3>
-            <ul class="footer-links">
-              <li><a href="pages/privacy.html">Privacy Policy</a></li>
-              <li><a href="pages/terms.html">Terms of Service</a></li>
-            </ul>
-          </div>
+        <nav class="nav-links" aria-label="Primary">
+          <a data-route="index.html" href="index.html">Home</a>
+          <a data-route="features.html" href="pages/features.html">Features</a>
+          <a data-route="pricing.html" href="pages/pricing.html">Pricing</a>
+          <a data-route="privacy.html" href="pages/privacy.html">Privacy</a>
+          <a data-route="terms.html" href="pages/terms.html">Terms</a>
         </nav>
+        <div class="nav-cta"></div>
+        <button
+          id="burger"
+          class="burger"
+          aria-label="Menu"
+          aria-expanded="false"
+          aria-controls="drawer"
+        >
+          ☰
+        </button>
       </div>
-      
-      <div class="footer-copyright">
-        © <span id="year"></span> ThinkInk. All rights reserved.
+      <div id="drawer" class="drawer" role="navigation" aria-label="Mobile">
+        <div class="container stack">
+          <a data-route="index.html" href="index.html">Home</a>
+          <a data-route="features.html" href="pages/features.html">Features</a>
+          <a data-route="pricing.html" href="pages/pricing.html">Pricing</a>
+          <a data-route="privacy.html" href="pages/privacy.html">Privacy</a>
+          <a data-route="terms.html" href="pages/terms.html">Terms</a>
+          <div class="stack" style="margin-top: 6px">
+            <!-- <a class="btn primary" href="#download">Start free</a> -->
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </header>
 
-  <script src="assets/app.js"></script>
-</body>
+    <main id="main">
+      <section class="hero">
+        <div class="container">
+          <span class="eyebrow">New • Prompt Enhancer</span>
+          <h1>
+            Build better prompts<br />
+            <span class="accent">Scale your AI workflows</span>
+          </h1>
+          <p class="lead">
+            ThinkInk is your creative prompt studio. Enhance clarity, tone, and
+            structure; explore templates for writing, marketing, and study; keep
+            your history and reuse the best — faster.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#" id="download"
+              >Download for Android</a
+            >
+            <a class="btn" href="pages/features.html">Explore features</a>
+          </div>
+          <div class="hero-note">
+            Free to start • Pro unlocks image/video prompt packs and unlimited
+            history
+          </div>
+
+          <div class="split" style="margin-top: 32px">
+            <div class="container box">
+              <h3 style="margin: 0 0 10px">Why ThinkInk</h3>
+              <div class="grid">
+                <article class="card">
+                  <h3>Prompt Enhancer</h3>
+                  <p>
+                    Refine tone, clarity, and structure to get on‑brief outputs.
+                  </p>
+                </article>
+                <article class="card">
+                  <h3>Templates</h3>
+                  <p>
+                    High‑quality prompts for writing, productivity, and
+                    marketing.
+                  </p>
+                </article>
+                <article class="card">
+                  <h3>History</h3>
+                  <p>Save, favorite, and quickly reuse your best prompts.</p>
+                </article>
+              </div>
+              <div class="badges">
+                <span class="badge">Minimal dark UI</span>
+                <span class="badge">Android optimized</span>
+                <span class="badge">Built with Flutter</span>
+              </div>
+            </div>
+
+            <div class="demo" aria-label="App preview">
+              <div class="badge">App preview</div>
+              <div class="card" style="margin-top: 10px">
+                <strong>Enhancer Presets</strong>
+                <p class="meta">Formal • Friendly • Concise • Persuasive</p>
+              </div>
+              <div class="card" style="margin-top: 10px">
+                <strong>Template Packs</strong>
+                <p class="meta">
+                  Blog outlines • Social captions • Ad copy • Study helpers
+                </p>
+              </div>
+              <div class="card" style="margin-top: 10px">
+                <strong>History</strong>
+                <p class="meta">Saved prompts with search and favorites</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h3 style="margin: 0 0 14px">Get started</h3>
+          <div class="grid">
+            <article class="card">
+              <h3>Free</h3>
+              <p>Core Enhancer • Basic Templates • Limited History</p>
+              <div style="margin-top: 10px">
+                <a class="btn block" href="pages/pricing.html">Choose Free</a>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Pro</h3>
+              <p>Unlimited History • Pro Templates • Image/Video Packs</p>
+              <div style="margin-top: 10px">
+                <a class="btn primary block" href="pages/pricing.html"
+                  >Upgrade to Pro</a
+                >
+              </div>
+            </article>
+            <article class="card">
+              <h3>Teams</h3>
+              <p>Shared libraries • Collaboration • Admin controls</p>
+              <div style="margin-top: 10px">
+                <a class="btn block" href="pages/pricing.html">Contact Sales</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="brand">
+              <div class="logo" aria-hidden="true"></div>
+              <strong>ThinkInk</strong>
+            </div>
+            <p class="footer-tagline">Your creative prompt companion.</p>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <div class="footer-nav-group">
+              <h3 class="footer-heading">Explore</h3>
+              <ul class="footer-links">
+                <li><a href="pages/features.html">Features</a></li>
+                <li><a href="pages/pricing.html">Pricing</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-nav-group">
+              <h3 class="footer-heading">Legal</h3>
+              <ul class="footer-links">
+                <li><a href="pages/privacy.html">Privacy Policy</a></li>
+                <li><a href="pages/terms.html">Terms of Service</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer-copyright">
+          © <span id="year"></span> ThinkInk. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/app.js"></script>
+  </body>
 </html>
