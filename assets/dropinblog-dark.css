@@ -1,0 +1,160 @@
+/* ThinkInk dark overrides for DropInBlog (scoped) */
+#thinkink-dib {
+  color: var(--text, #f2f2f2);
+  background: transparent;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* kill any forced white backgrounds inside the scope */
+#thinkink-dib [style*="background:#fff"],
+#thinkink-dib [style*="background: #fff"],
+#thinkink-dib [style*="background-color:#fff"],
+#thinkink-dib [style*="background-color: #fff"],
+#thinkink-dib [style*="background: white"],
+#thinkink-dib [style*="background-color: white"] {
+  background: var(--surface, #1e1e1e) !important;
+  color: var(--text, #f2f2f2) !important;
+}
+
+/* general surface for cards, list items, article shells */
+#thinkink-dib .dib-post,
+#thinkink-dib .dib-card,
+#thinkink-dib .dib-article,
+#thinkink-dib .dib-wrap,
+#thinkink-dib .dib-list,
+#thinkink-dib .dib-sidebar {
+  background: var(--surface, #1e1e1e) !important;
+  border: 1px solid var(--border, #2a2a2a) !important;
+  border-radius: var(--radius, 14px) !important;
+  color: var(--text, #f2f2f2) !important;
+}
+
+/* titles, links, meta */
+#thinkink-dib h1,
+#thinkink-dib h2,
+#thinkink-dib h3,
+#thinkink-dib h4 {
+  color: var(--text, #f2f2f2) !important;
+}
+#thinkink-dib p,
+#thinkink-dib li,
+#thinkink-dib .dib-meta {
+  color: var(--muted, #bbbbbb) !important;
+}
+#thinkink-dib a {
+  color: var(--text, #f2f2f2) !important;
+  text-decoration: none;
+}
+#thinkink-dib a:hover {
+  color: var(--accent, #7e84fd) !important;
+}
+
+/* images keep rounded look */
+#thinkink-dib img {
+  border-radius: 10px;
+  display: block;
+}
+
+/* code */
+#thinkink-dib pre {
+  background: var(--surface-2, #171717) !important;
+  border: 1px solid var(--border, #2a2a2a) !important;
+  border-radius: 12px !important;
+  padding: 14px !important;
+  overflow: auto;
+}
+#thinkink-dib code {
+  background: var(--surface-2, #171717) !important;
+  color: var(--text, #f2f2f2) !important;
+  border-radius: 8px;
+  padding: 0 0.35rem;
+}
+
+/* blockquote */
+#thinkink-dib blockquote {
+  border-left: 3px solid var(--border, #2a2a2a) !important;
+  color: var(--dim, #8c8c8c) !important;
+  background: transparent !important;
+}
+
+/* tables */
+#thinkink-dib table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border, #2a2a2a) !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+#thinkink-dib th {
+  background: var(--surface-2, #171717) !important;
+  color: var(--text, #f2f2f2) !important;
+}
+#thinkink-dib th,
+#thinkink-dib td {
+  border-bottom: 1px solid var(--border, #2a2a2a) !important;
+  padding: 10px 12px;
+}
+
+/* buttons/tags/pills/pagination */
+#thinkink-dib .dib-btn,
+#thinkink-dib .dib-tag,
+#thinkink-dib .dib-pagination a {
+  background: var(--surface-2, #171717) !important;
+  color: var(--text, #f2f2f2) !important;
+  border: 1px solid var(--border, #2a2a2a) !important;
+  border-radius: 999px !important;
+}
+#thinkink-dib .dib-pagination .active a {
+  background: color-mix(
+    in srgb,
+    var(--accent, #7e84fd) 20%,
+    transparent
+  ) !important;
+  border-color: color-mix(
+    in srgb,
+    var(--accent, #7e84fd) 40%,
+    var(--border, #2a2a2a)
+  ) !important;
+}
+
+/* search (Algolia AA) remap to dark */
+#thinkink-dib {
+  --aa-background-color-rgb: 18, 18, 18;
+  --aa-input-background-color-rgb: 23, 23, 23;
+  --aa-panel-border-color-rgb: 42, 42, 42;
+  --aa-input-border-color-rgb: 42, 42, 42;
+  --aa-text-color-rgb: 242, 242, 242;
+  --aa-muted-color-rgb: 140, 140, 140;
+  --aa-primary-color-rgb: 126, 132, 253;
+  --aa-overlay-color-rgb: 17, 18, 19;
+}
+#thinkink-dib .aa-Input {
+  background: rgb(var(--aa-input-background-color-rgb)) !important;
+  color: rgb(var(--aa-text-color-rgb)) !important;
+  border: 1px solid rgb(var(--aa-input-border-color-rgb)) !important;
+  border-radius: 12px !important;
+}
+#thinkink-dib .aa-Panel {
+  background: rgb(var(--aa-background-color-rgb)) !important;
+  color: rgb(var(--aa-text-color-rgb)) !important;
+  border: 1px solid rgb(var(--aa-panel-border-color-rgb)) !important;
+}
+
+/* kill any light card shadows if applied */
+#thinkink-dib [style*="box-shadow"] {
+  box-shadow: var(--shadow, 0 8px 24px rgba(0, 0, 0, 0.35)) !important;
+}
+
+/* spacing + hover polish */
+#thinkink-dib .dib-post {
+  transition: transform 0.16s ease, border-color 0.16s ease;
+}
+#thinkink-dib .dib-post:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(
+    in srgb,
+    var(--accent, #7e84fd) 28%,
+    var(--border, #2a2a2a)
+  ) !important;
+}

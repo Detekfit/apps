@@ -102,4 +102,58 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email").value.trim();
     const reason = document.getElementById("reason").value.trim();
   }
+
+  (function () {
+    const overlay = document.getElementById("blog-loader");
+    const target = document.getElementById("dib-posts");
+
+    function closeOverlay(reason) {
+      if (!overlay || overlay.dataset.closed === "1") return;
+      overlay.classList.remove("is-open");
+      overlay.setAttribute("aria-hidden", "true");
+      overlay.dataset.closed = "1";
+      target?.setAttribute("aria-busy", "false");
+      // console.debug('Loader closed:', reason);
+    }
+
+    // Close on first content mutation inside #dib-posts
+    if (target && "MutationObserver" in window) {
+      const observer = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          if (m.addedNodes && m.addedNodes.length) {
+            closeOverlay("dib-content-added");
+            observer.disconnect();
+            break;
+          }
+        }
+      });
+      observer.observe(target, { childList: true, subtree: true });
+    }
+
+    // Safety timeout: close after 6.5s even if nothing arrived
+    const timeout = setTimeout(() => closeOverlay("timeout"), 6500);
+
+    // If script already populated before this ran
+    if (target && target.children.length > 0) {
+      clearTimeout(timeout);
+      closeOverlay("pre-populated");
+    }
+
+    // Optional: ESC to close
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeOverlay("esc");
+    });
+
+    // Optional: click outside dialog to close
+    overlay?.addEventListener("click", (e) => {
+      if (e.target === overlay) closeOverlay("backdrop");
+    });
+
+    // In case the DropInBlog script dispatches a custom event in future
+    window.addEventListener("dropinblog:loaded", () =>
+      closeOverlay("dib-event")
+    );
+  })();
+
+  document.getElementById("year").textContent = new Date().getFullYear();
 });
