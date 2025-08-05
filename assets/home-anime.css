@@ -1,0 +1,112 @@
+/* Minimal, tasteful motion for the home page only */
+
+/* 1) Global reduce-motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-delayed,
+  .stagger > * {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .hero-glow {
+    display: none !important;
+  }
+}
+
+/* 2) Soft reveal defaults */
+.reveal,
+.reveal-delayed,
+.stagger > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  will-change: opacity, transform;
+}
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delayed.revealed {
+  transition-delay: 0.08s;
+}
+.stagger.revealed > * {
+  opacity: 1;
+  transform: none;
+}
+.stagger.revealed > *:nth-child(1) {
+  transition-delay: 0.04s;
+}
+.stagger.revealed > *:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.stagger.revealed > *:nth-child(3) {
+  transition-delay: 0.16s;
+}
+.stagger.revealed > *:nth-child(4) {
+  transition-delay: 0.22s;
+}
+.stagger.revealed > *:nth-child(5) {
+  transition-delay: 0.28s;
+}
+
+/* 3) Hero accent glow (subtle) */
+.hero {
+  position: relative;
+  overflow: clip;
+}
+.hero-glow {
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 48vh;
+  max-height: 440px;
+  filter: blur(48px);
+  opacity: 0.25;
+  background: radial-gradient(
+      60% 60% at 20% 40%,
+      color-mix(in srgb, var(--accent) 60%, transparent) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      40% 40% at 50% 20%,
+      color-mix(in srgb, #8b5cf6 40%, transparent) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      30% 30% at 80% 60%,
+      color-mix(in srgb, #22d3ee 35%, transparent) 0%,
+      transparent 70%
+    );
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+}
+.hero-glow.on {
+  opacity: 0.32;
+  transform: translateY(0);
+}
+
+/* 4) Tiny hover lift for cards and buttons */
+.card,
+.btn {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease,
+    border-color 0.18s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+}
+.btn.primary:hover {
+  transform: translateY(-1px);
+}
+
+/* 5) Demo parallax container */
+.demo {
+  perspective: 1000px;
+}
+.demo-parallax {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+.demo-parallax .card {
+  transform: translateZ(0);
+}

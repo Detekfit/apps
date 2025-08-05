@@ -10,6 +10,8 @@
     />
     <link rel="icon" href="../favicon.ico" />
     <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/deletion.css" />
+    <link rel="stylesheet" href="../assets/footer.css" />
   </head>
   <body>
     <a class="sr-only" href="#main">Skip to content</a>
@@ -25,11 +27,11 @@
           <span>ThinkInk</span>
         </a>
         <nav class="nav-links" aria-label="Primary">
-          <a data-route="index.html" href="../index.html">Home</a>
-          <a data-route="features.html" href="features.html">Features</a>
-          <a data-route="pricing.html" href="pricing.html">Pricing</a>
-          <a data-route="privacy.html" href="privacy.html">Privacy</a>
-          <a data-route="terms.html" href="terms.html">Terms</a>
+          <a href="../index.html">Home</a>
+          <a href="features.html">Features</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
         </nav>
         <div class="nav-cta"></div>
         <button
@@ -42,20 +44,14 @@
           ☰
         </button>
       </div>
-      <div id="drawer" class="drawer" aria-hidden="true">
+      <div id="drawer" class="drawer" role="navigation" aria-label="Mobile">
         <div class="container stack">
-          <a data-route="index.html" href="../index.html">Home</a>
+          <a data-route="index.html" href="index.html">Home</a>
           <a data-route="features.html" href="features.html">Features</a>
           <a data-route="pricing.html" href="pricing.html">Pricing</a>
           <a data-route="privacy.html" href="privacy.html">Privacy</a>
           <a data-route="terms.html" href="terms.html">Terms</a>
-          <a
-            data-route="account-deletion.html"
-            href="account-deletion.html"
-            aria-current="page"
-            >Account Deletion</a
-          >
-          <a class="btn primary" href="../index.html#download">Start free</a>
+          <div class="stack" style="margin-top: 6px"></div>
         </div>
       </div>
     </header>
@@ -66,161 +62,98 @@
           <span class="eyebrow">Manage your data</span>
           <h1>Request account deletion</h1>
           <p class="lead">
-            You can request the deletion of your ThinkInk account and associated
-            data. Follow the steps below.
+            Submit this form to request deletion of your ThinkInk account and
+            associated data.
           </p>
 
-          <div class="grid" style="margin-top: var(--s-4)">
-            <!-- Steps -->
+          <div class="split" style="margin-top: var(--s-4)">
             <article class="card">
-              <h3>Steps to delete your account</h3>
+              <h3>Deletion request</h3>
+
+              <form id="deletionForm" class="stack" novalidate>
+                <div>
+                  <label for="fullName">Full name</label>
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    required
+                    class="card input"
+                  />
+                </div>
+                <div>
+                  <label for="email">Account email</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    class="card input"
+                  />
+                </div>
+                <div>
+                  <label for="reason">Reason (optional)</label>
+                  <textarea
+                    id="reason"
+                    name="reason"
+                    rows="4"
+                    class="card input"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="checkbox">
+                    <input
+                      id="confirm"
+                      name="confirm"
+                      type="checkbox"
+                      required
+                    />
+                    <span
+                      >I understand this action is permanent and cannot be
+                      undone.</span
+                    >
+                  </label>
+                </div>
+
+                <!-- Hidden metadata you might want to capture -->
+                <input type="hidden" name="submittedAt" value="" />
+                <input type="hidden" name="page" value="account-deletion" />
+
+                <div class="actions">
+                  <button class="btn primary" type="submit" id="submitBtn">
+                    Submit request
+                  </button>
+                  <a class="btn ghost" href="../index.html">Cancel</a>
+                </div>
+
+                <!-- Inline status area -->
+                <div
+                  id="formStatus"
+                  class="status small"
+                  aria-live="polite"
+                ></div>
+              </form>
+            </article>
+
+            <article class="card">
+              <h3>What happens next?</h3>
               <ol class="stack" style="margin: 0; padding-left: 1.1rem">
-                <li>Submit the deletion request form below (Google Forms).</li>
                 <li>
-                  Check your email and confirm the request (we verify
-                  ownership).
+                  We verify your request and account ownership via your email.
                 </li>
                 <li>
-                  We will process deletion within 7 days and notify you when
+                  We process deletion within 7 days and notify you when
                   complete.
                 </li>
+                <li>Local-only data on your device can be cleared in-app.</li>
               </ol>
               <p class="meta" style="margin-top: var(--s-3)">
-                If you can’t access your email or have special circumstances,
-                use the fallback form or contact support.
-              </p>
-            </article>
-
-            <!-- FAQ / Notes -->
-            <article class="card">
-              <h3>What is deleted?</h3>
-              <p>
-                We delete your account profile, saved prompts, local history (if
-                synced), and any associated identifiers.
-              </p>
-              <div class="notice" style="margin-top: var(--s-3)">
-                <strong>Note:</strong> Data stored only on your device
-                (local-first history) is under your control. You can clear it
-                anytime in-app.
-              </div>
-            </article>
-
-            <!-- Support -->
-            <article class="card">
-              <h3>Need help?</h3>
-              <p>If you run into issues, reach us and we’ll assist promptly.</p>
-              <div class="badges">
-                <a
-                  class="btn"
-                  href="mailto:support@yourdomain.com?subject=ThinkInk%20Account%20Deletion%20Help"
+                Questions?
+                <a class="links" href="mailto:support@wriink.com"
                   >Email support</a
-                >
-                <a class="btn ghost" href="../privacy.html">Privacy Policy</a>
-              </div>
+                >.
+              </p>
             </article>
-          </div>
-
-          <!-- Google Form Embed -->
-          <div class="card" style="margin-top: var(--s-4); overflow: hidden">
-            <h3>Account deletion request form</h3>
-            <p class="meta">
-              This form securely collects the details needed to verify ownership
-              and process your request.
-            </p>
-
-            <!-- Replace FORM_ID with your Google Form ID -->
-            <div
-              class="demo"
-              style="
-                padding: 0;
-                border: 0;
-                border-radius: var(--radius);
-                overflow: hidden;
-              "
-            >
-              <iframe
-                title="ThinkInk Account Deletion Request"
-                src="https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true"
-                width="100%"
-                height="900"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0"
-                style="border: 0; display: block; width: 100%"
-              >
-                Loading…
-              </iframe>
-            </div>
-
-            <!-- Direct form link (for small screens or iframes blocked) -->
-            <div class="badges" style="margin-top: var(--s-3)">
-              <a
-                class="btn primary"
-                href="https://docs.google.com/forms/d/e/FORM_ID/viewform"
-                target="_blank"
-                rel="noopener"
-                >Open form in new tab</a
-              >
-            </div>
-          </div>
-
-          <!-- Fallback simple form (mailto) -->
-          <div class="card" style="margin-top: var(--s-4)">
-            <h3>Fallback request (email)</h3>
-            <p class="meta">
-              If Google Forms is unavailable, send us a request directly. We’ll
-              confirm via email before proceeding.
-            </p>
-
-            <form
-              id="fallbackForm"
-              class="stack"
-              action="mailto:support@yourdomain.com"
-              method="post"
-              enctype="text/plain"
-              onsubmit="return handleFallbackSubmit(event)"
-            >
-              <div>
-                <label for="name">Full name</label>
-                <input
-                  id="name"
-                  name="Full name"
-                  type="text"
-                  required
-                  class="card"
-                  style="padding: 10px"
-                />
-              </div>
-              <div>
-                <label for="email">Account email</label>
-                <input
-                  id="email"
-                  name="Email"
-                  type="email"
-                  required
-                  class="card"
-                  style="padding: 10px"
-                />
-              </div>
-              <div>
-                <label for="reason">Reason (optional)</label>
-                <textarea
-                  id="reason"
-                  name="Reason"
-                  rows="4"
-                  class="card"
-                  style="padding: 10px"
-                ></textarea>
-              </div>
-              <div class="badges">
-                <button class="btn primary" type="submit">Send request</button>
-                <a class="btn" href="../index.html">Cancel</a>
-              </div>
-            </form>
-            <p class="small">
-              By submitting, you acknowledge that processing may take up to 7
-              days.
-            </p>
           </div>
         </div>
       </section>
@@ -249,20 +182,23 @@
                 <li><a href="pricing.html">Pricing</a></li>
               </ul>
             </div>
-
             <div class="footer-nav-group">
               <h3 class="footer-heading">Legal</h3>
               <ul class="footer-links">
                 <li><a href="privacy.html">Privacy Policy</a></li>
                 <li><a href="terms.html">Terms of Service</a></li>
                 <li>
-                  <a href="account-deletion.html">Account Deletion</a>
+                  <a href="account-deletion.html" aria-current="page"
+                    >Account Deletion</a
+                  >
+                </li>
+                <li>
+                  <a href="refund-policy.html">Refound Policy</a>
                 </li>
               </ul>
             </div>
           </nav>
         </div>
-
         <div class="footer-copyright">
           © <span id="year"></span> ThinkInk. All rights reserved.
         </div>
@@ -270,30 +206,6 @@
     </footer>
 
     <script src="../assets/app.js"></script>
-    <script>
-      // Footer year
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Fallback mailto helper: formats subject/body
-      function handleFallbackSubmit(e) {
-        e.preventDefault();
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const reason = document.getElementById("reason").value.trim();
-
-        const to = "support@yourdomain.com";
-        const subject = encodeURIComponent("ThinkInk Account Deletion Request");
-        const body = encodeURIComponent(
-          `Full name: ${name}
-Email: ${email}
-Reason: ${reason || "N/A"}
-
-I request deletion of my ThinkInk account and associated data.`
-        );
-        const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
-        window.location.href = mailto;
-        return false;
-      }
-    </script>
+    <script src="../assets/deletion.js"></script>
   </body>
 </html>

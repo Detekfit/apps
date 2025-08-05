@@ -8,8 +8,11 @@
       name="description"
       content="Enhance prompts, reuse templates, and speed up your AI workflows with a minimalist dark UI."
     />
+
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/footer.css" />
+    <link rel="stylesheet" href="assets/home-anim.css" />
   </head>
   <body>
     <a class="sr-only" href="#main">Skip to content</a>
@@ -18,14 +21,16 @@
       <div class="container nav">
         <a
           class="brand brand-link"
-          href="../index.html"
+          href="index.html"
           aria-label="ThinkInk — Home"
         >
           <div class="logo" aria-hidden="true"></div>
           <span>ThinkInk</span>
         </a>
         <nav class="nav-links" aria-label="Primary">
-          <a data-route="index.html" href="index.html">Home</a>
+          <a data-route="index.html" href="index.html" aria-current="page"
+            >Home</a
+          >
           <a data-route="features.html" href="pages/features.html">Features</a>
           <a data-route="pricing.html" href="pages/pricing.html">Pricing</a>
           <a data-route="privacy.html" href="pages/privacy.html">Privacy</a>
@@ -42,6 +47,7 @@
           ☰
         </button>
       </div>
+
       <div id="drawer" class="drawer" role="navigation" aria-label="Mobile">
         <div class="container stack">
           <a data-route="index.html" href="index.html">Home</a>
@@ -49,53 +55,55 @@
           <a data-route="pricing.html" href="pages/pricing.html">Pricing</a>
           <a data-route="privacy.html" href="pages/privacy.html">Privacy</a>
           <a data-route="terms.html" href="pages/terms.html">Terms</a>
-          <div class="stack" style="margin-top: 6px">
-            <!-- <a class="btn primary" href="#download">Start free</a> -->
-          </div>
+          <div class="stack" style="margin-top: 6px"></div>
         </div>
       </div>
     </header>
 
     <main id="main">
       <section class="hero">
-        <div class="container">
+        <div class="hero-glow" aria-hidden="true"></div>
+
+        <div class="container reveal">
           <span class="eyebrow">New • Prompt Enhancer</span>
           <h1>
             Build better prompts<br />
             <span class="accent">Scale your AI workflows</span>
           </h1>
-          <p class="lead">
+
+          <p class="lead reveal-delayed">
             ThinkInk is your creative prompt studio. Enhance clarity, tone, and
             structure; explore templates for writing, marketing, and study; keep
             your history and reuse the best — faster.
           </p>
 
-          <div class="hero-actions">
+          <div class="hero-actions stagger">
             <a
               class="btn primary"
               href="https://play.google.com/store/apps/details?id=com.wriink.thinkink"
               target="_blank"
-              follow="noopener"
+              rel="noopener"
               id="download"
               >Download for Android</a
             >
             <a
               class="btn"
-              href="https://play.google.com/apps/internaltest/4701555159192646627"
+              href="https://play.google.com/apps/testing/com.wriink.thinkink"
               target="_blank"
-              follow="nofollow"
+              rel="nofollow"
               >Join as a Tester</a
             >
           </div>
-          <div class="hero-note">
+
+          <div class="hero-note reveal-delayed">
             Free to start • Pro unlocks image/video prompt packs and unlimited
             history
           </div>
 
           <div class="split" style="margin-top: 32px">
             <div class="container box">
-              <h3 style="margin: 0 0 10px">Why ThinkInk</h3>
-              <div class="grid">
+              <h3 style="margin: 0 0 10px" class="reveal">Why ThinkInk</h3>
+              <div class="grid stagger">
                 <article class="card">
                   <h3>Prompt Enhancer</h3>
                   <p>
@@ -114,7 +122,7 @@
                   <p>Save, favorite, and quickly reuse your best prompts.</p>
                 </article>
               </div>
-              <div class="badges">
+              <div class="badges stagger" style="margin-top: 10px">
                 <span class="badge">Minimal dark UI</span>
                 <span class="badge">Android optimized</span>
                 <span class="badge">Built with Flutter</span>
@@ -122,20 +130,22 @@
             </div>
 
             <div class="demo" aria-label="App preview">
-              <div class="badge">App preview</div>
-              <div class="card" style="margin-top: 10px">
-                <strong>Enhancer Presets</strong>
-                <p class="meta">Formal • Friendly • Concise • Persuasive</p>
-              </div>
-              <div class="card" style="margin-top: 10px">
-                <strong>Template Packs</strong>
-                <p class="meta">
-                  Blog outlines • Social captions • Ad copy • Study helpers
-                </p>
-              </div>
-              <div class="card" style="margin-top: 10px">
-                <strong>History</strong>
-                <p class="meta">Saved prompts with search and favorites</p>
+              <div class="badge reveal-delayed">App preview</div>
+              <div class="demo-parallax stagger">
+                <div class="card" style="margin-top: 10px">
+                  <strong>Enhancer Presets</strong>
+                  <p class="meta">Formal • Friendly • Concise • Persuasive</p>
+                </div>
+                <div class="card" style="margin-top: 10px">
+                  <strong>Template Packs</strong>
+                  <p class="meta">
+                    Blog outlines • Social captions • Ad copy • Study helpers
+                  </p>
+                </div>
+                <div class="card" style="margin-top: 10px">
+                  <strong>History</strong>
+                  <p class="meta">Saved prompts with search and favorites</p>
+                </div>
               </div>
             </div>
           </div>
@@ -439,7 +449,6 @@
                 <li><a href="pages/pricing.html">Pricing</a></li>
               </ul>
             </div>
-
             <div class="footer-nav-group">
               <h3 class="footer-heading">Legal</h3>
               <ul class="footer-links">
@@ -448,17 +457,21 @@
                 <li>
                   <a href="pages/account-deletion.html">Account Deletion</a>
                 </li>
+                <li><a href="pages/refund-policy.html">Refund Policy</a></li>
               </ul>
             </div>
           </nav>
         </div>
-
         <div class="footer-copyright">
           © <span id="year"></span> ThinkInk. All rights reserved.
         </div>
       </div>
     </footer>
 
-    <script src="assets/app.js"></script>
+    <script src="assets/app.js" defer></script>
+    <script src="assets/home-anim.js" defer></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>

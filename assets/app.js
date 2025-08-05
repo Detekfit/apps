@@ -93,4 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   })();
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const reason = document.getElementById("reason").value.trim();
+  }
 });
