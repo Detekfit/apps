@@ -1,0 +1,125 @@
+/* Drawer Base Style */
+.drawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -240px; /* Initially off-screen */
+    height: 100%;
+    width: 240px; /* Set width */
+    background: var(--surface-2);
+    border-right: 1px solid var(--border);
+    box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: transform 0.3s ease;
+  }
+  
+  .drawer.open {
+    display: block;
+    transform: translateX(240px); /* Slide in */
+  }
+  
+  /* Container for stack layout inside the drawer */
+  .drawer .container {
+    padding: var(--s-4) var(--s-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+    position: relative; /* Allows for absolute positioning of close button */
+  }
+  
+  /* Close Button Container (Positioned near the top-right, 50% inside and 50% outside) */
+  .drawer .close-btn-container {
+    position: absolute;
+    top: 50%; /* Position vertically at the center */
+    right: -20px; /* Positioned 50% outside the drawer */
+    transform: translateY(-50%); /* Center the container vertically */
+    display: flex;
+    justify-content: center; /* Align the button horizontally */
+    align-items: center; /* Vertically center the button inside the container */
+    width: 40px; /* Size of the container */
+    height: 40px; /* Size of the container */
+    background: var(--accent); /* Background color for the button */
+    border-radius: 50%; /* Circular container */
+    z-index: 10; /* Make sure it's above other elements */
+  }
+  
+  /* Close Button (X) Styling */
+  .drawer .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--surface); /* Button icon color */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .drawer .close-btn i {
+    pointer-events: none; /* Disable pointer events for the icon inside the button */
+  }
+  
+  /* Hover effect for close button */
+  .drawer .close-btn:hover {
+    color: var(--highlight); /* Change icon color on hover */
+  }
+  
+  /* Styling for the navigation links */
+  .drawer a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: var(--text);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+  }
+  
+  .drawer a:hover {
+    background: var(--accent-2); /* Hover background color */
+    padding-left: 24px; /* Indentation effect on hover */
+  }
+  
+  /* Active state for navigation links */
+  .drawer a.active {
+    background: var(--accent);
+    color: var(--surface);
+    padding-left: 30px; /* Further indentation when active */
+    border-left: 4px solid var(--highlight); /* Accent line */
+  }
+  
+  /* Styling for icons in the drawer */
+  .drawer .icon {
+    margin-right: 12px; /* Spacing between icon and text */
+    font-size: 18px; /* Icon size */
+  }
+  
+  /* Drawer buttons */
+  .drawer .btn {
+    margin-top: var(--s-3);
+    padding: 12px 18px;
+    background: var(--accent);
+    color: var(--surface);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    border: none;
+    transition: background 0.3s ease;
+  }
+  
+  .drawer .btn:hover {
+    background: var(--accent-2);
+  }
+  
+  /* Optional background overlay when the drawer is open */
+  .drawer.open::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    z-index: -1;
+  }
+  

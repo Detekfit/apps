@@ -15,15 +15,38 @@ document.addEventListener("DOMContentLoaded", () => {
       if (route === current) a.classList.add("active");
     });
 
-  // Mobile drawer toggle
-  const burger = document.getElementById("burger");
-  const drawer = document.getElementById("drawer");
-  if (burger && drawer) {
-    burger.addEventListener("click", () => {
-      drawer.classList.toggle("open");
-      burger.setAttribute("aria-expanded", drawer.classList.contains("open"));
+// Mobile drawer toggle
+const burger = document.getElementById("burger");
+const drawer = document.getElementById("drawer");
+const closeBtn = document.getElementById("close-drawer"); // Get the close button
+
+if (burger && drawer) {
+  // Open the drawer when the burger button is clicked
+  burger.addEventListener("click", () => {
+    drawer.classList.toggle("open");
+    burger.setAttribute("aria-expanded", drawer.classList.contains("open"));
+  });
+
+  // Close the drawer when the close button is clicked
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      drawer.classList.remove("open"); // Remove 'open' class to close the drawer
+      burger.setAttribute("aria-expanded", "false"); // Update aria-expanded to false
     });
   }
+
+  // Close the drawer if clicking outside the drawer
+  document.addEventListener("click", (event) => {
+    if (!drawer.contains(event.target) && !burger.contains(event.target)) {
+      drawer.classList.remove("open"); // Close the drawer if clicked outside
+      burger.setAttribute("aria-expanded", "false"); // Update aria-expanded to false
+    }
+  });
+}
+
+
+
+
 
   // Compact header on scroll
   const header = document.querySelector(".header-wrap");
@@ -156,4 +179,5 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 
   document.getElementById("year").textContent = new Date().getFullYear();
+
 });

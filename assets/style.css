@@ -181,47 +181,6 @@ img {
   outline-offset: 2px;
 }
 
-/* Drawer */
-.drawer {
-  display: none;
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-}
-.drawer.open {
-  display: block;
-}
-.drawer .container {
-  padding-top: var(--s-3);
-  padding-bottom: var(--s-4);
-}
-.drawer .stack {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.drawer a {
-  display: block;
-  padding: 12px 0;
-  color: var(--text);
-  border-bottom: 1px solid var(--border);
-}
-.drawer a:last-child {
-  border-bottom: 0;
-}
-.drawer a:hover {
-  background: #1a1a1a;
-}
-.drawer a.active {
-  background: #191919;
-  border-left: 2px solid var(--accent);
-  padding-left: 10px;
-}
-/* Drawer buttons */
-.drawer .btn {
-  margin-top: var(--s-3);
-  width: 100%;
-  border-radius: 12px;
-}
 
 /* Buttons */
 .btn {
