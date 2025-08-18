@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Demo header - remove when integrating */
+.header {
+    padding: var(--s-4);
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: var(--s-3);
+}
+
+.burger {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: var(--s-2);
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+    color: var(--text);
+}
+
+.burger:hover {
+    background: var(--accent-2);
+    color: var(--accent);
+}
+
+/* Demo content - remove when integrating */
+.main-content {
+    padding: var(--s-6) var(--s-4);
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    margin-bottom: var(--s-3);
+    color: var(--text);
+}
+
+.main-content p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ==============================================
+   DRAWER STYLES - USE THESE IN YOUR PROJECT
+   ============================================== */
+
+/* Backdrop overlay */
+.drawer-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 998;
+}
+
+.drawer-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Refined Drawer Styles */
+.drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    box-shadow: 4px 0 20px var(--shadow-lg);
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer.open {
+    transform: translateX(0);
+}
+
+/* Drawer Header */
+.drawer-header {
+    padding: var(--s-4) var(--s-3);
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, var(--accent), var(--highlight));
+    color: var(--surface);
+    position: relative;
+}
+
+.drawer-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.drawer-header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Close Button - Modern floating style */
+.close-btn-container {
+    position: absolute;
+    top: 50%;
+    right: -18px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.close-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    color: var(--text);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.close-btn:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--surface);
+    transform: rotate(90deg);
+    box-shadow: 0 4px 12px var(--shadow-lg);
+}
+
+/* Drawer Content */
+.drawer-content {
+    flex: 1;
+    padding: var(--s-4) 0;
+    overflow-y: auto;
+}
+
+/* Navigation Section */
+.nav-section {
+    margin-bottom: var(--s-4);
+}
+
+.nav-section-title {
+    padding: 0 var(--s-3) var(--s-2);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Navigation Links - Enhanced */
+.drawer a {
+    display: flex;
+    align-items: center;
+    padding: 12px var(--s-3);
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+    margin: 0 var(--s-2);
+    border-radius: var(--radius-sm);
+}
+
+.drawer a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 0;
+    background: var(--accent);
+    border-radius: 2px;
+    transform: translateY(-50%);
+    transition: height 0.2s ease;
+}
+
+.drawer a:hover {
+    background: var(--accent-2);
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+.drawer a:hover::before {
+    height: 20px;
+}
+
+.drawer a.active {
+    background: linear-gradient(135deg, var(--accent), var(--highlight));
+    color: var(--surface);
+    font-weight: 600;
+}
+
+.drawer a.active::before {
+    height: 100%;
+    background: var(--surface);
+}
+
+/* Icon styling */
+.drawer .icon {
+    width: 20px;
+    margin-right: var(--s-3);
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Drawer Footer */
+.drawer-footer {
+    padding: var(--s-3);
+    border-top: 1px solid var(--border);
+    background: var(--surface-2);
+}
+
+.drawer .btn {
+    width: 100%;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, var(--accent), var(--highlight));
+    color: var(--surface);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+}
+
+.drawer .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+}
+
+.drawer .btn:active {
+    transform: translateY(0);
+}
+
+/* Demo content - remove when integrating */
+.main-content {
+    padding: var(--s-6) var(--s-4);
+    text-align: center;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    margin-bottom: var(--s-3);
+    color: var(--text);
+}
+
+.main-content p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .drawer {
+        width: calc(100vw - 60px);
+        max-width: 320px;
+    }
+}
+
+/* Animation improvements */
+.drawer a {
+    animation: slideInLeft 0.3s ease forwards;
+    animation-delay: calc(var(--delay, 0) * 0.05s);
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.drawer.open a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Smooth scrollbar for drawer content */
+.drawer-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.drawer-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.drawer-content::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+}
+
+.drawer-content::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}

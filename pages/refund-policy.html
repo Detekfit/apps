@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="../assets/style.css" />
     <link rel="stylesheet" href="../assets/footer.css" />
     <link rel="stylesheet" href="../assets/refund.css" />
+    <link rel="stylesheet" href="../assets/drawer.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
   </head>
   <body>
     <a class="sr-only" href="#main">Skip to content</a>
@@ -32,7 +37,6 @@
           <a href="pricing.html">Pricing</a>
           <a href="privacy.html">Privacy</a>
           <a href="terms.html">Terms</a>
-          <a href="refund-policy.html" aria-current="page">Refunds</a>
         </nav>
         <div class="nav-cta"></div>
         <button
@@ -45,17 +49,24 @@
           ☰
         </button>
       </div>
-      <div id="drawer" class="drawer" aria-hidden="true">
+      <<div id="drawer" class="drawer">
         <div class="container stack">
-          <a href="../index.html">Home</a>
-          <a href="features.html">Features</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
-          <a href="refund-policy.html" aria-current="page">Refunds</a>
-          <a class="btn primary" href="../index.html#download">Start free</a>
+            <!-- Close Button Container (Positioned near the top-right of the drawer) -->
+            <div class="close-btn-container">
+                <button id="close-drawer" class="close-btn" aria-label="Close menu">
+                    <span class="icon"><i class="fas fa-times"></i></span> <!-- FontAwesome close icon -->
+                </button>
+            </div>
+    
+            <!-- Navigation Links -->
+            <a data-route="index.html" href="../index.html">Home</a>
+            <a data-route="features.html" href="features.html">Features</a>
+            <a data-route="pricing.html" href="pricing.html">Pricing</a>
+            <a data-route="privacy.html" href="privacy.html">Privacy</a>
+            <a data-route="terms.html" href="terms.html">Terms</a>
         </div>
-      </div>
+    </div>
+    
     </header>
 
     <main id="main" tabindex="-1">
@@ -70,114 +81,76 @@
           <article class="card rp-card">
             <h2>Overview</h2>
             <p>
-              We want you to enjoy ThinkInk. If something isn’t working for you,
-              please contact us and we’ll help. This policy explains when
-              refunds may apply and how to request them.
+              We want you to enjoy ThinkInk. Once a purchase is made, it’s final, and no refunds are applicable. This policy explains the conditions surrounding digital product purchases, subscriptions, and how to handle issues in case of failed transactions.
             </p>
-
+          <br>
             <div class="rp-grid">
               <section>
-                <h3>Eligibility window</h3>
+                <h3>Purchase Policy</h3>
                 <ul class="rp-list">
                   <li>
-                    New subscriptions: full refund within 14 days of initial
-                    purchase if you haven’t used premium features extensively.
+                    Once a digital product or subscription is successfully purchased, it is final. All tokens, whether for subscriptions or in-app purchases, must be used within the app ThinkInk and cannot be refunded.
                   </li>
                   <li>
-                    Renewals: contact us within 7 days of the renewal charge for
-                    a review.
-                  </li>
-                  <li>
-                    One‑time purchases: 14 days from purchase date if the item
-                    is defective or not as described.
+                    A subscription can only be used on the device where it was purchased. If you purchase a monthly subscription, you will only be able to access the benefits from the account or device where the purchase was made.
                   </li>
                 </ul>
               </section>
-
+          
               <section>
-                <h3>Non‑refundable cases</h3>
+                <h3>Failed Purchase</h3>
                 <ul class="rp-list">
                   <li>
-                    Abuse or excessive usage during the trial/early access
-                    period.
-                  </li>
-                  <li>Requests made significantly after the stated windows.</li>
-                  <li>
-                    Charges from third‑party platforms or marketplaces—please
-                    contact the platform directly.
+                    If your purchase fails, please contact us at <a class="links" href="mailto:support@detekfit.com">support@detekfit.com</a>. Once the failure is verified, the digital goods will be directly added to your account.
                   </li>
                 </ul>
               </section>
-
+          
               <section>
-                <h3>How refunds are issued</h3>
+                <h3>Non-Refundable Cases</h3>
                 <ul class="rp-list">
                   <li>
-                    Refunds go back to the original payment method when
-                    possible.
+                    All purchases, once successfully completed, are final and cannot be refunded.
                   </li>
                   <li>
-                    Processing time depends on your bank/payment provider
-                    (typically 5–10 business days).
-                  </li>
-                  <li>
-                    If a refund isn’t possible to the original method, we may
-                    offer store credit as an alternative.
+                    Any issues with purchases must be reported immediately, and we will work to resolve the problem as soon as possible.
                   </li>
                 </ul>
               </section>
-
+          
               <section>
-                <h3>How to request a refund</h3>
+                <h3>How to Request Support for Failed Purchases</h3>
                 <ol class="rp-list">
                   <li>
-                    Email us at
-                    <a
-                      class="links"
-                      href="mailto:support@wriink.com?subject=Refund%20request"
-                      >support@yourdomain.com</a
-                    >.
+                    If your purchase failed, email us at <a class="links" href="mailto:support@detekfit.com">support@detekfit.com</a>.
                   </li>
                   <li>
-                    Include your account email, order ID, and a short
-                    description of the issue.
+                    Include your account email, order ID, and a short description of the issue.
                   </li>
-                  <li>We aim to respond within 2 business days.</li>
+                  <li>We aim to respond within 2 business days and verify the failed transaction.</li>
                 </ol>
-                <div class="badges" style="margin-top: 8px">
-                  <a
-                    class="btn primary"
-                    href="mailto:support@yourdomain.com?subject=Refund%20request"
-                    >Start a refund request</a
-                  >
-                </div>
               </section>
-
+          
               <section>
-                <h3>Subscriptions managed by app stores</h3>
+                <h3>Subscriptions Managed by App Stores</h3>
                 <p>
-                  If you purchased via Apple App Store or Google Play, their
-                  policies apply and refunds must be requested through the
-                  respective store account support.
+                  If you purchased via the Apple App Store or Google Play, their policies apply. Refunds for such purchases must be requested directly through the respective app store support channels.
                 </p>
               </section>
-
+          
               <section>
                 <h3>Contact</h3>
                 <p>
-                  Questions about this policy? Reach us at
-                  <a class="links" href="mailto:support@yourdomain.com"
-                    >support@yourdomain.com</a
-                  >.
+                  Questions about this policy? Reach us at <a class="links" href="mailto:support@detekfit.com">support@detekfit.com</a>.
                 </p>
               </section>
             </div>
-
+          
             <p class="small rp-note">
-              This policy is for general guidance. Local laws may provide
-              additional rights. We may update this page as our service evolves.
+              This policy is for general guidance. Local laws may provide additional rights. We may update this page as our service evolves.
             </p>
           </article>
+          
         </div>
       </section>
     </main>

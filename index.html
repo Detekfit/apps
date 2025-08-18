@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="stylesheet" href="assets/footer.css" />
     <link rel="stylesheet" href="assets/home-anim.css" />
+    <link rel="stylesheet" href="assets/drawer.css"/>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
   </head>
   <body>
     <a class="sr-only" href="#main">Skip to content</a>
@@ -50,14 +55,37 @@
 
       <div id="drawer" class="drawer" role="navigation" aria-label="Mobile">
         <div class="container stack">
-          <a data-route="index.html" href="index.html">Home</a>
-          <a data-route="features.html" href="pages/features.html">Features</a>
-          <a data-route="pricing.html" href="pages/pricing.html">Pricing</a>
-          <a data-route="privacy.html" href="pages/privacy.html">Privacy</a>
-          <a data-route="terms.html" href="pages/terms.html">Terms</a>
-          <div class="stack" style="margin-top: 6px"></div>
+          <!-- Close Button Container (Positioned near the top-right of the drawer) -->
+          <div class="close-btn-container">
+            <button id="close-drawer" class="close-btn" aria-label="Close menu">
+              <i class="fas fa-times"></i> <!-- FontAwesome close icon -->
+            </button>
+          </div>
+      
+          <!-- Navigation Links -->
+          <a data-route="index.html" href="index.html">
+            <span class="icon"><i class="fas fa-home"></i></span> Home
+          </a>
+          <a data-route="features.html" href="pages/features.html">
+            <span class="icon"><i class="fas fa-cogs"></i></span> Features
+          </a>
+          <a data-route="pricing.html" href="pages/pricing.html">
+            <span class="icon"><i class="fas fa-dollar-sign"></i></span> Pricing
+          </a>
+          <a data-route="privacy.html" href="pages/privacy.html">
+            <span class="icon"><i class="fas fa-lock"></i></span> Privacy
+          </a>
+          <a data-route="terms.html" href="pages/terms.html">
+            <span class="icon"><i class="fas fa-file-alt"></i></span> Terms
+          </a>
         </div>
       </div>
+      
+      
+      
+      
+      
+      
     </header>
 
     <main id="main">
